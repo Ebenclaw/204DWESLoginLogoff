@@ -10,7 +10,8 @@
 <main class="login">
     <div class="container">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formLogin" method="post">
-            <button type="submit" name="login" class="botonIniciarSesion">Inicio Privado</button>
-            <button type="submit" name="login" class="botonIniciarSesion">Cancelar</button>
+            <label>Usuario</label><input type="text">
+            <button type="submit" name="inicioPrivado" class="botonInicioPrivado">Inicio Privado</button>
+            <button type="submit" name="cancel" class="botonCancelar">Cancelar</button>
         </form>
     </div>

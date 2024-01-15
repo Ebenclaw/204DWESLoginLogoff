@@ -35,7 +35,7 @@ if (!isset($_COOKIE['idioma'])) {
 // Se comprueba que se pulsa el boton login
 if (isset($_REQUEST['login'])) {
     // Redirige a la página de login
-    $_SESSION['paginaEnCurso'] = 'login';
+    $_SESSION['paginaActiva'] = 'login';
     exit();
 }
 
