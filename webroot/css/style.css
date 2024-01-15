@@ -29,6 +29,22 @@ header{
     justify-content: flex-end;
 /*    background-color: red;*/
 }
+.error{
+    color: red;
+}
+.imgError{
+    display: block;
+    width: 600px;
+    margin: auto;
+    margin-top: 200px;
+}
+.divError{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F73C90;
+    text-align: center;
+}
 .listaIndex li{
     display: inline-block;
 }
@@ -128,10 +144,26 @@ h1{
     padding-top: 20px;
     padding-right: 20px;
 }
-.container > img{
-    padding-top: 30px;
-    padding-right: 20px;
-    justify-content: flex-end;
+.gallery {
+  background: #EEE;
+}
+/*---CAROUSEL---*/
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
 }
 .ejercicioSesion{
     width: 50%;

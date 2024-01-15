@@ -10,6 +10,6 @@ Rebeca Sánchez Pérez
 Aplicacion Login Logoff correspondiente al tema 6 de la asignatura DWES
 ## Funcionalidades
 ## Entorno de desarrollo
-[http://daw204.isauces.local/204DWESLoginLogoff/indexLoginLogoff.php](http://daw204.isauces.local/204DWESLoginLogoff/indexLoginLogoff.php)
+[http://daw204.isauces.local/204DWESLoginLogoff/index.php](http://daw204.isauces.local/204DWESLoginLogoff/index.php)
 ## Entorno de explotacion
-[https://daw204.ieslossauces.es/204DWESLoginLogoff/indexLoginLogoff.php](https://daw204.ieslossauces.es/204DWESLoginLogoff/indexLoginLogoff.php)
+[https://daw204.ieslossauces.es/204DWESLoginLogoff/index.php](https://daw204.ieslossauces.es/204DWESLoginLogoff/index.php)
