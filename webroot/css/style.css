@@ -46,6 +46,22 @@ body{
 .carousel img{
     width: 600px;
 }
+/*---TECNOLOGIAS---*/
+.tecnologias .container1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+.tecnologias .container1 div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+}
+.tecnologias .container1 div img{
+    width: 50px;
+    height: 50px;
+}
 /*---FOOTER---*/
 footer{
     position: fixed;
