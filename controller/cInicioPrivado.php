@@ -1,9 +1,16 @@
 <?php
 /*
  * @author Rebeca Sánchez Pérez
- * @version 1.0
- * @since 15/01/2023
+ * @version 1.1
+ * @since 17/01/2023
  */
+if (empty($_SESSION['user204DWESLoginLogout'])) {
+// Redirige a la página de inicio
+    $_SESSION['paginaActiva'] = 'inicioPublico';
+    // Se carga el index
+    header('Location: index.php');
+    exit();
+}
 
 // Se comprueba que se pulsa el boton Cerrar Sesion
 if (isset($_REQUEST['cerrarSesion'])) {
@@ -11,8 +18,8 @@ if (isset($_REQUEST['cerrarSesion'])) {
     session_destroy();
     // Redirige a la página de Inicio Publico
     $_SESSION['paginaActiva'] = 'inicioPublico';
-    // Se carga el controlador de la pagina en curso
-    require_once $controller[$_SESSION['paginaActiva']];
+    // Se carga el index
+    header('Location: index.php');
     exit();
 }
 
@@ -20,8 +27,8 @@ if (isset($_REQUEST['cerrarSesion'])) {
 if (isset($_REQUEST['mtoDepartamento'])) {
     // Redirige a la página de WIP
     $_SESSION['paginaActiva'] = 'wip';
-// Se carga el controlador de la pagina en curso
-    require_once $controller[$_SESSION['paginaActiva']];
+    // Se carga el index
+    header('Location: index.php');
     exit();
 }
 
