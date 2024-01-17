@@ -17,7 +17,7 @@ if(!isset($_SESSION['paginaActiva'])){
     $_SESSION['paginaActiva'] = 'inicioPublico';
 }
 
-// Carga la pagina en curso
+// Carga l controlador de la pagina en curso
 require_once $controller[$_SESSION['paginaActiva']];
 
 ?>

@@ -7,7 +7,7 @@
 ?>
 <h2>WIP</h2>
 </header>
-<main class="login">
+<main class="detalle">
     <div class="container">
         <h3>Work in Progress</h3>
         <p>Lo sentimos, esta parte de la aplicacion aun está en desarrollo</p>
