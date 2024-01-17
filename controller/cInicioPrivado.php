@@ -7,8 +7,12 @@
 
 // Se comprueba que se pulsa el boton Cerrar Sesion
 if (isset($_REQUEST['cerrarSesion'])) {
+    // Se destruye la sesion
+    session_destroy();
     // Redirige a la página de Inicio Publico
     $_SESSION['paginaActiva'] = 'inicioPublico';
+    // Se carga el controlador de la pagina en curso
+    require_once $controller[$_SESSION['paginaActiva']];
     exit();
 }
 
@@ -16,6 +20,8 @@ if (isset($_REQUEST['cerrarSesion'])) {
 if (isset($_REQUEST['mtoDepartamento'])) {
     // Redirige a la página de WIP
     $_SESSION['paginaActiva'] = 'wip';
+// Se carga el controlador de la pagina en curso
+    require_once $controller[$_SESSION['paginaActiva']];
     exit();
 }
 
@@ -23,13 +29,17 @@ if (isset($_REQUEST['mtoDepartamento'])) {
 if (isset($_REQUEST['detalle'])) {
     // Redirige a la página de Detalle
     $_SESSION['paginaActiva'] = 'detalle';
+    // Se carga el index
+    header('Location: index.php');
     exit();
 }
 
 // Se comprueba que se pulsa el boton Editar Perfil
 if (isset($_REQUEST['editarPerfil'])) {
     // Redirige a la página de Mi Cuenta
-    $_SESSION['paginaActiva'] = 'miCuenta';
+    $_SESSION['paginaActiva'] = 'wip';
+    // Se carga el index
+    header('Location: index.php');
     exit();
 }
 

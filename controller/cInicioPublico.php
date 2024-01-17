@@ -14,8 +14,8 @@ if (!isset($_COOKIE['idioma'])) {
 if (isset($_REQUEST['login'])) {
     // Redirige a la página de login
     $_SESSION['paginaActiva'] = 'login';
-    // Se carga el controlador de la pagina en curso
-    require_once $controller[$_SESSION['paginaActiva']];
+    // Se carga el index
+    header('Location: index.php');
     exit();
 }
 
