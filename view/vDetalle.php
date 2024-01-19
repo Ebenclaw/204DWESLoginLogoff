@@ -19,7 +19,7 @@
         echo '<h3>$_SESSION</h3>';
         foreach ($_SESSION as $key => $value) {
             if ($key === 'user204DWESLoginLogout') {
-                echo("<u>$key</u> => <b>" . $value->getDescUsuario() . "</b>");
+                echo("<u>$key</u> => <b>" . $value->getDescUsuario() . "</b><br>");
             }
         }
     } else {

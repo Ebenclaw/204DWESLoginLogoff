@@ -9,6 +9,13 @@
 </header>
 <main class="inicioPrivado">
     <div class="container">
+        <div class="mensajeBienvenida">
+            <?php
+            echo $avInicioPrivado['bienvenida'];
+            echo $avInicioPrivado['numConexiones'];
+            echo $avInicioPrivado['ultimaConexion'];
+            ?>
+        </div>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formInicioPrivado" method="post">
             <button type="submit" name="cerrarSesion" class="botonCerrarSesion">Cerrar Sesion</button>
             <button type="submit" name="mtoDepartamento" class="botonMtoDepartamento">Mantenimiento Departamentos</button>

@@ -1,7 +1,7 @@
 <?php
 /*
- * @author Rebeca Sánchez Pérez, Ismael Ferreras García
- * @version 1.0
+ * @author Rebeca Sánchez Pérez, Ismael Ferreras García, Carlos García Cachón
+ * @version 1.1
  * @since 15/01/2023
  */
 
@@ -12,6 +12,14 @@ if (isset($_REQUEST['cancel'])) {
     // Se carga el index
     header('Location: index.php');
     exit();
+}
+
+//Si el usuario pulsa el botón 'Registrarse', mando al usuario al index de DWES
+if(isset($_REQUEST['registrarse'])){ 
+    $_SESSION['paginaAnterior'] = 'login'; // Asigno a la página anterior la página de login
+    $_SESSION['paginaActiva'] = 'registro'; // Asigno a la pagina en curso la pagina de registro
+    header('Location: index.php'); // Redirecciono al index de la APP
+    exit;
 }
 
 $entradaOK = true; // Indica si todas las respuestas son correctas

@@ -8,7 +8,7 @@
 // Se comprueba que se pulsa el boton Volver
 if (isset($_REQUEST['volver'])) {
     // Redirige a la página de inicio privado
-    $_SESSION['paginaActiva'] = 'inicioPrivado';
+    $_SESSION['paginaActiva'] = $_SESSION['paginaAnterior'];
     // Se carga el index
     header('Location: index.php');
     exit();

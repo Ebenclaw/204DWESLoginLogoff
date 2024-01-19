@@ -10,8 +10,8 @@
 <main class="inicioPublico">
     <div class="container">
         <form name="inicioPublico" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formInicioPublico" method="post">
-            <button type="submit" value="ES" name="castellano" disabled><img src="webroot/image/español.png" alt="esp" class="fotoIdioma"></button>
-            <button type="submit" value="EN" name="ingles" disabled><img src="webroot/image/ingles.png" alt="eng" class="fotoIdioma"></button>
+            <button type="submit" value="ES" name="castellano"><img src="webroot/image/español.png" alt="esp" class="fotoIdioma"></button>
+            <button type="submit" value="EN" name="ingles"><img src="webroot/image/ingles.png" alt="eng" class="fotoIdioma"></button>
         </form>
         <div class="carousel">
             <div><img src="webroot/image/arbol.PNG" alt="arbol"></div>
