@@ -15,12 +15,16 @@
     </div>
     <?php
     // $_SESSION
-    echo('<div class="ejercicio">');
-    echo('<h3>$_SESSION</h3>');
-    foreach ($_SESSION as $key => $valor) {
-        echo('<u>' . $key . '</u> => <b>' . $valor . '</b><br>');
+    if (isset($_SESSION)) {
+        echo '<h3>$_SESSION</h3>';
+        foreach ($_SESSION as $key => $value) {
+            if ($key === 'user204DWESLoginLogout') {
+                echo("<u>$key</u> => <b>" . $value->getDescUsuario() . "</b>");
+            }
+        }
+    } else {
+        echo '<h2>La variable <b>$_SESSION</b> no está definida</h2>';
     }
-    echo('</div>');
 
     // $_COOKIE
     echo('<div class="ejercicio">');

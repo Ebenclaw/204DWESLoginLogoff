@@ -20,8 +20,9 @@ $aErrores = [
     'usuario' => '',
     'password' => '',
 ];
-if (isset($_REQUEST['enviar'])) {
-
+if (isset($_REQUEST['inicioPrivado'])) {
+    $_SESSION['paginaAnterior'] = 'login';
+    
     // Validamos si el usuario existe y es oUsuarioActivo utilizando el metodo 'validarUsuario()' de la clase 'UsuarioPDO'
     $oUsuarioActivo = UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password']);
     // Comprobamos si '$oUsuarioActivo' no esta declarado o es 'null'
@@ -51,7 +52,7 @@ if ($entradaOK) {
     // Actualizamos la fecha y hora de la última conexión
     $oUsuarioActivo = UsuarioPDO::registrarUltimaConexion($oUsuarioActivo);
     //Redireccionamos a el inicio privado
-    $_SESSION['user208DWESLoginLogout'] = $oUsuarioActivo;
+    $_SESSION['user204DWESLoginLogout'] = $oUsuarioActivo;
     $_SESSION['paginaActiva'] = 'inicioPrivado';
     // Se carga el index
     header('Location: index.php');

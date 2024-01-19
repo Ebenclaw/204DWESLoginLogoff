@@ -1,7 +1,7 @@
 <?php
 /*
  * @author Rebeca Sánchez Pérez
- * @version 1.0
+ * @version 1.1
  * @since 15/01/2023
  */
 ?>
@@ -12,11 +12,11 @@
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formLogin" method="post">
             <table>
                 <tr>
-                    <td><label for="usuario">Usuario:</label></td>
+                    <td>Usuario:</td>
                     <td><input class="obligatorio" type="text" name="usuario" value="<?php echo (isset($_REQUEST['usuario']) ? $_REQUEST['usuario'] : ''); ?>"></td>
                 </tr>
                 <tr>
-                    <td><label for="contrasena">Contraseña:</label></td>
+                    <td>Contraseña:</td>
                     <td><input class="obligatorio" type="password" name="password" value="<?php echo (isset($_REQUEST['password']) ? $_REQUEST['password'] : ''); ?>"></td>
                 </tr>
                 <tr>
