@@ -1,8 +1,8 @@
 <?php
 
 /*
- * @author Rebeca Sánchez Pérez
- * @version 1.0
+ * @author Rebeca Sánchez Pérez, Carlos García Cachón
+ * @version 1.2
  * @since 17/01/2023
  */
 
@@ -50,5 +50,29 @@ class UsuarioPDO implements UsuarioDB {
         CONSULTA;
         DBPDO::ejecutaConsulta($consultaActualizacionFechaUltimaConexion);
         return $oUsuario;
+    }
+    
+    // Valida que el codigo de usuario introducido no exista en la base de datos
+     public static function validarCodNoExiste($codUsuario) {
+        //CONSULTA SQL - SELECT
+        $consultaExisteUsuario = <<<CONSULTA
+            SELECT T01_CodUsuario FROM T01_Usuario WHERE T01_CodUsuario='{$codUsuario}';
+        CONSULTA;
+        return DBPDO::ejecutaConsulta($consultaExisteUsuario)->fetchObject();
+    }
+    
+    // Se inserta en la base de datos el usuario especificado
+    public static function altaUsuario($codUsuario, $password, $descUsuario) {
+        //CONSULTA SQL - INSERT
+        $consultaCrearUsuario = <<<CONSULTA
+            INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, T01_FechaHoraUltimaConexion) 
+            VALUES ("{$codUsuario}", SHA2("{$codUsuario}{$password}", 256), "{$descUsuario}", 1, null);
+        CONSULTA;
+            
+        if (DBPDO::ejecutaConsulta($consultaCrearUsuario)) { // Ejecuto la consulta
+            return new Usuario($codUsuario, $password, $descUsuario, 1, date('Y-m-d H:i:s'), null, 'usuario'); // Creo el Usuario con los valores recogidos
+        } else {
+            return false; // Si la consulta falla devuelvo 'false'
+        }
     }
 }

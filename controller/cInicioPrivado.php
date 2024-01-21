@@ -56,18 +56,18 @@ if (isset($_REQUEST['editarPerfil'])) {
 if ($_COOKIE['idioma'] == 'ES') {
     $bienvenida = "Bienvenid@, {$_SESSION['user204DWESLoginLogout']->getdescUsuario()}.<br>";
     $numConexiones = "Esta es tu {$_SESSION['user204DWESLoginLogout']->getnumAcceso()} vez conectándote.<br>";
-    if ($_SESSION['user204DWESLoginLogout']->getnumAcceso() == 1) {
-        $ultimaConexion = "Esta es la primera vez que te conectas";
-    } else {
+    if ($_SESSION['user204DWESLoginLogout']->getFechaHoraUltimaConexionAnterior()!=null) {
         $ultimaConexion = "Te conectaste por última vez {$_SESSION['user204DWESLoginLogout']->getfechaHoraUltimaConexionAnterior()}.";
+    }else{
+        $ultimaConexion='';
     }
 } elseif ($_COOKIE['idioma'] == 'EN') {
     $bienvenida = "Welcome, {$_SESSION['user204DWESLoginLogout']->getdescUsuario()}.<br>";
     $numConexiones = "This is your {$_SESSION['user204DWESLoginLogout']->getnumAcceso()} time logging in.<br>";
-    if ($_SESSION['user204DWESLoginLogout']->getnumAcceso() == 1) {
-        $ultimaConexion = "This is the first time you connect";
-    } else {
+    if ($_SESSION['user204DWESLoginLogout']->getFechaHoraUltimaConexionAnterior()!=null) {
         $ultimaConexion = "You last logged in on {$_SESSION['user204DWESLoginLogout']->getfechaHoraUltimaConexionAnterior()}.";
+    } else{
+        $ultimaConexion='';
     }
 }
 // Meter el mensaje en un array
