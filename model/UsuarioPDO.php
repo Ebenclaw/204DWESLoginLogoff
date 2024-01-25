@@ -66,7 +66,7 @@ class UsuarioPDO implements UsuarioDB {
         //CONSULTA SQL - INSERT
         $consultaCrearUsuario = <<<CONSULTA
             INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, T01_FechaHoraUltimaConexion) 
-            VALUES ("{$codUsuario}", SHA2("{$codUsuario}{$password}", 256), "{$descUsuario}", 1, null);
+            VALUES ("{$codUsuario}", SHA2("{$codUsuario}{$password}", 256), "{$descUsuario}", 1, now());
         CONSULTA;
             
         if (DBPDO::ejecutaConsulta($consultaCrearUsuario)) { // Ejecuto la consulta
